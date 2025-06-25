@@ -10,20 +10,23 @@ export const navLinks = [
 ];
 
 export const skills = [
-  { name: 'C++', level: 90, Icon: CppIcon },
-  { name: 'Python', level: 85, Icon: PythonIcon },
-  { name: 'MySQL', level: 80, Icon: MySqlIcon },
-  { name: 'Java', level: 75, Icon: JavaIcon },
+  { name: 'C++', level: 75, Icon: CppIcon },
+  { name: 'Python', level: 60, Icon: PythonIcon },
+  { name: 'MySQL', level: 70, Icon: MySqlIcon },
+  { name: 'Java', level: 70, Icon: JavaIcon },
 ];
 
 export const projects = [
-  {
-    title: 'Recipe Recommendation System',
-    description: 'An AI-based system that suggests recipes based on user preferences and detects ingredients using YOLO.',
-    tags: ['Python', 'NLP', 'YOLO', 'Machine Learning'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/sagar-chavan-12/recipe-recommendation-system',
+
+    {
+    title: 'Sales Dashboard',
+    description: 'A data visualization dashboard for sales trends using interactive charts to display revenue, orders, and region-wise sales.',
+    tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Tableau'],
+    liveUrl: 'https://sales-data-dashboard-t92iuysbqy4xxdjsleegje.streamlit.app/',
+    githubUrl: 'https://github.com/sagarc123/Sales-Data-Dashboard',
   },
+
+  
   {
     title: 'Quiz Application',
     description: 'A web platform for teachers to create quizzes and students to take them, with leaderboard and chat features.',
@@ -31,6 +34,7 @@ export const projects = [
     liveUrl: '#',
     githubUrl: 'https://github.com/sagarc123/quiz_app',
   },
+
   {
     title: 'Doctor Appointment System',
     description: 'A web-based system allowing patients to book appointments and chat or video call with doctors in real time.',
@@ -38,13 +42,15 @@ export const projects = [
     liveUrl: '#',
     githubUrl: 'https://github.com/sagarc123/Doctor-Appointment-Application',
   },
+
   {
-    title: 'Sales Dashboard',
-    description: 'A data visualization dashboard for sales trends using interactive charts to display revenue, orders, and region-wise sales.',
-    tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Tableau'],
+    title: 'Recipe Recommendation System',
+    description: 'An AI-based system that suggests recipes based on user preferences and detects ingredients using YOLO.',
+    tags: ['Python', 'NLP', 'YOLO', 'Machine Learning'],
     liveUrl: '#',
-    githubUrl: 'https://github.com/sagarc123/Sales-Data-Dashboard',
-  },
+    githubUrl: 'https://github.com/sagar-chavan-12/recipe-recommendation-system',
+  }
+
 ];
 
 

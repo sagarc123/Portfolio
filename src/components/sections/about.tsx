@@ -38,7 +38,7 @@ export function AboutSection() {
                   className="rounded-full border-4 border-primary mb-4 shadow-lg"
                 />
                 <CardTitle className="text-2xl">Sagar Chavan</CardTitle>
-                <CardDescription className="text-secondary">Full-Stack Developer</CardDescription>
+                <CardDescription className="text-secondary">Software | AI | Data Analytics Developer</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-center text-sm text-muted-foreground">
