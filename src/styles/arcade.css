@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+
+:root {
+  --midnight: #161824;
+  --neon-blue: #00f0ff;
+  --neon-magenta: #ff00a8;
+  --neon-green: #00ff8f;
+  --neon-yellow: #ffe900;
+  --neon-orange: #ff5a00;
+  --neon-red : #ff0000;
+  --metal-silver: #c0c0c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+  background-color: var(--midnight);
+  color: white;
+  overflow-x: hidden;
+}
+
+.bg-midnight {
+  background-color: var(--midnight);
+}
+
+.text-neon-blue {
+  color: var(--neon-blue);
+}
+
+.text-neon-magenta {
+  color: var(--neon-magenta);
+}
+
+.text-neon-green {
+  color: var(--neon-green);
+}
+
+.text-neon-yellow {
+  color: var(--neon-yellow);
+}
+
+.text-neon-orange {
+  color: var(--neon-orange);
+}
+
+.text-neon-red{
+  color: var(--neon-red);
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.retro-font {
+  font-family: 'VT323', monospace;
+}
+
+.neon-glow {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+}
+
+.neon-box {
+  border: 2px solid currentColor;
+  box-shadow: 0 0 5px currentColor, inset 0 0 5px currentColor;
+}
+
+.arcade-button {
+  background: linear-gradient(45deg, #333, #555);
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 12px 24px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.arcade-button:hover {
+  background: linear-gradient(45deg, #555, #777);
+  box-shadow: 0 0 20px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+  transform: translateY(-2px);
+}
+
+.arcade-button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 5px var(--neon-blue);
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing {
+  overflow: hidden;
+  border-right: 3px solid var(--neon-green);
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-cursor 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--neon-green); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 5px currentColor; }
+  to { box-shadow: 0 0 25px currentColor, 0 0 35px currentColor; }
+}
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.pixel-border {
+  border: 3px solid currentColor;
+  position: relative;
+}
+
+.pixel-border::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: currentColor;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.screen-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+}
+
+.power-up {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.power-up:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: brightness(1.3);
+}
+
+.power-up::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, currentColor 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.power-up:hover::after {
+  width: 100px;
+  height: 100px;
+  opacity: 0.5;
+}
+
+.achievement-card {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid var(--neon-magenta);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 168, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.achievement-card:hover::before {
+  left: 100%;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 0, 168, 0.3);
+}
+
+.cabinet {
+  background: linear-gradient(135deg, #2a2a3e 0%, #1a1a2e 100%);
+  border: 3px solid var(--neon-yellow);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cabinet::before {
+  display: none !important;
+}
+
+.cabinet:hover::before {
+  opacity: 1;
+}
+
+.cabinet:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 233, 0, 0.4);
+}
+
+.progress-bar {
+  background: #333;
+  border: 2px solid var(--neon-green);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-blue) 100%);
+  transition: width 2s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.score-counter {
+  font-family: 'Press Start 2P', monospace;
+  color: var(--neon-yellow);
+  font-size: 24px;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.joystick {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #666 30%, #333 70%);
+  border: 3px solid var(--neon-blue);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.joystick::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.joystick:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.medal {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, var(--neon-yellow) 0%, var(--neon-orange) 100%);
+  border: 3px solid var(--neon-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.medal::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.medal:hover::before {
+  opacity: 1;
+  animation: rotate 0.5s ease-in-out;
+}
+
+.medal:hover {
+  transform: scale(1.2) rotate(360deg);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.crt-effect {
+  position: relative;
+}
+
+.crt-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 255, 0, 0.03) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.level-map {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  border: 2px solid var(--neon-blue);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px 0;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.level-map::before {
+  display: none !important;
+}
+
+@keyframes moveGrid {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.zoom-in {
+  animation: zoomIn 0.6s ease-out;
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.section-enter {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.section-enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.neon-border-animation {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--midnight), var(--midnight)) padding-box,
+              linear-gradient(45deg, var(--neon-blue), var(--neon-magenta), var(--neon-green), var(--neon-yellow)) border-box;
+  animation: neonBorder 3s ease-in-out infinite;
+}
+
+@keyframes neonBorder {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+}
+
+.animate-pop-modal {
+  animation: popModal 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes popModal {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-level-map-bg.level-map::before {
+  display: none !important;
+  content: none !important;
+}
